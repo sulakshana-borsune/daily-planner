@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  
+<link rel="stylesheet" href="./assets/style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"   ype="text/javascript"></script>
+    
+    
+</head>
+<body>
+
+    <div class="collection"><h1 id="h1">Daily Planner</h1>
+        <h2 id="h2"></h2>
+        <a href="#!" class="collection-item"><span class="badge">1</span>10:00a.m.</a>
+        <a href="#!" class="collection-item"><span class="new badge">4</span>11:00a.m.</a>
+        <a href="#!" class="collection-item"><span class="new badge red">1</span>12:00p.m.</a>
+        <a href="#!" class="collection-item"><span class="badge"></span>1:00p.m.</a>
+        <a href="#!" class="collection-item"><span class="new badge blue"></span>2:00p.m.</a>
+        <a href="#!" class="collection-item"><span class="badge"></span>3:00p.m.</a>
+        <a href="#!" class="collection-item"><span class="badge"></span>4:00p.m.</a>
+        <a href="#!" class="collection-item"><span class="badge"></span>5:00p.m.</a>
+
+        <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                  <form>
+                <p>
+                    <label for="item">item</label>
+                    <input type="text" name="item" id="item">
+                  </p>
+                  <p>
+                    <button id="addItem">Add Item</button>
+                  </p>
+              </form>
+                <span class="badge">4:00 p.m.</span></div>
+              <div class="collapsible-body mydiv"><p>5:00 p.m.</p></div>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                  <form>
+                <p>
+                    <label for="item">item</label>
+                    <input type="text" name="item" id="item1">
+                  </p>
+                  <p>
+                    <button id="addItem1">Add Item</button>
+                  </p>
+              </form>
+                <span class="badge">3:oop.m.</span></div>
+              <div class="collapsible-body mydiv"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+          </ul>
+    </div>
+     <p id="displayMoment">   </p>
+           
+      <script>
+
+const date = moment()
+
+console.log(date)
+
+console.log(`Now: ${date.format('ll')}`)
+
+var eDisplayMoment = document.getElementById('h2')
+eDisplayMoment.innerHTML = date.format('YYYY-M-D')
+
+let items 
+document.getElementById('item').innerHTML= ''
+for(i=0;i<item.length;i++){
+  let itemElem = document.createElement('li')
+  itemElem.className = items[i]
+  itemElem.innerHTML = `
+  ${items[i].text}`
+}
+
+
+
+document.getElementById('addItem').addEventListener('click',()=>{
+event.preventDefault()
+console.log('ping')
+text: document.getElementById('item').value
+
+     localStorage.setItem('items', JSON.stringify(items))
+      })
+      //let display = JSON.parse(localStorage.getItem('items'))
+      //console.log(display)
+
+</script>
+<script src="./script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</body>
+</html>
